@@ -162,8 +162,12 @@ class Bullet(pg.sprite.Sprite):
             self.image = bullet2_img
         self.image.set_colorkey(BLACK)
         self.rect = self.image.get_rect()
-        self.rect.bottom = y 
-        self.rect.centerx = x
+        if p == 1:
+            self.rect.bottom = y +25
+            self.rect.centerx = x +40
+        if p == 2:
+            self.rect.bottom = y +25
+            self.rect.centerx = x -40
         self.speedx = 15
         self.player = p
         
