@@ -123,14 +123,14 @@ class Bullet(pg.sprite.Sprite):
         self.image = bullet_img
         self.image.set_colorkey(BLACK)
         self.rect = self.image.get_rect()
-        self.rect.bottom = y
-        self.rect.centerx = x
+        self.rect.bottom = y+25
+        self.rect.centerx = x+25
         self.speedx = 15
 
     def update(self):
         self.rect.x += self.speedx
         # kill if it moves off the top of the screen
-        if self.rect.bottom < 0:
+        if (self.rect.right > WIDTH) or (self.rect.left < -25):
             self.kill()
 #Load graphics
 background = pg.image.load(path.join(img_dir, "b.png")).convert()
